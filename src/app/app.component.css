@@ -1,0 +1,10 @@
+.errorDisplay {
+  color: red;
+  text-align: center;
+}
+
+.titleDisplay {
+  color: white;
+  text-align: center;
+  font-size: 30;
+}
