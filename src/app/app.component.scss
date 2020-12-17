@@ -1,7 +1,4 @@
-.errorDisplay {
-  color:red;
-  text-align: center;
-}
+
 
 .titleDisplay {
   color:white;
@@ -9,6 +6,44 @@
   font-size:30;
 }
 
+.error1Display {
+  color:red;
+  text-align: center;
+    font-weight: 600;
+  font-size:60;
+   margin: 8px 0;
+    flex: 1;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  height: 50%;
+}
+th, td {
+  text-align: center;
+  vertical-align: center;
+  align: center;
+  padding : 6px;
+  min-width: 100%;
+  max-width: 100%;
+}
+th {
+  background-color: #4CAF50;
+  color : white;
+}
+tr:nth-child(even) {
+  background-color : #f2f2f2;
+}
+thead, tbody {
+
+    max-width:100%;
+    min-width:100%;
+    align-items: center;
+    text-align:center;
+   
+    font-weight: 600;
+    margin: auto;
+}
 h1,
   h2,
   h3,
@@ -31,7 +66,6 @@ h1,
     height: 60px;
     max-width:100%;
     min-width:100%;
-    display: flex;
     align-items: center;
     text-align:center;
     background-color: #1976d2;
@@ -54,14 +88,7 @@ h1,
     justify-content: space-around;
   }
 
-  .card-container {
-    display: flex;
-    flex-wrap: wrap;
-    bottom: 1%;
-    margin: auto;
-    align-items: stretch;
-    justify-content: space-between;
-  }
+  
 
   .cardspread {
     border-radius: 4px;
@@ -87,9 +114,9 @@ h1,
     width: auto;
     min-width: 100%;
     position: relative;
-   
+
     background-color: #fafafa;
-    
+
     margin: auto;
     padding: auto;
     display: flex;
@@ -103,14 +130,14 @@ h1,
     position: relative;
     display: flex;
     align-items:stretch;
-    margin: auto;
-    padding: auto;
+    margin: 1%;
+    padding: 1%;
   }
+
 
   .mycontainer a {
     display: inline;
     bottom: 1%;
-    left: 1%;
   }
   .mycontainer.copyright {
     font-size: 0.7em;

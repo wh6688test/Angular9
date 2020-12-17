@@ -17,7 +17,7 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  
+
   /* Responsive Styles */
   @media screen and (max-width: 767px) {
 
@@ -59,27 +59,56 @@
   <span>Welcome to Wendy first Angular</span>
 </div>
 
- 
-  <!-- Highlight Card -->
-  <div class="highlight-card">
 
-    <span>Enjoy {{ title }}</span>
+
+  <!-- Highlight Card -->
+  
+   <div class="hight-card">
+    <app-inputforms #inputForm></app-inputforms>
+    </div>
+
+   
+
+
+
+   <div class="error1Display">
+<span *ngIf="inputForm.groups.error">{{inputForm.groups.error}}</span>
 
   </div>
+  <div class="cardspread">
+ <table  *ngIf="inputForm.groups.data">
+      <thead>
+         <tr>
+          <th>Group Id</th>
+          <th>Attribute1</th>
+          <th>Attribute2</th>
+           <th>Member Count</th>
+        </tr>
+      </thead>
+    <tbody>
+        <tr *ngFor="let group of inputForm.groups.data">
+          <td>{{group.group_id}}</td>
+          <td>{{group.attr1}}</td>
+           <td>{{group.attr2}}</td>
+            <td>{{group.member_count}}</td>
+        </tr>
+      </tbody>
+    </table>
 
-  
+  </div>
   <div class="cardspread">
       <img type="image/svg+xml" width="90%" height="90%" alt="my svg" src="../assets/img/my.svg" />
+
   </div>
-  
+
   <!-- Footer -->
- 
+
      <div class="mycontainer">
-      <a href="/privacy" target="_blank" rel="noopener"> Privacy</a>&nbsp;&nbsp;
-      <a href="/terms" target="_blank" rel="noopener"> Terms & Conditions</a>&nbsp;&nbsp;
-      <a href="/external" target="_blank" rel="external"> External</a>&nbsp;&nbsp;
+      <a rel = "no opener no referrer" href="/privacy" target="_blank" rel="noopener"> Privacy</a>&nbsp;&nbsp;
+      <a rel = "no opener no referrer" href="/terms" target="_blank" rel="noopener"> Terms & Conditions</a>&nbsp;&nbsp;
+      <a rel = "no opener no referrer" href="/external" target="_blank" rel="external"> External</a>&nbsp;&nbsp;
       <div>
-      <span data-testid="footer_note" className="copyright">© WHSU 2020</span> 
+      <span data-testid="footer_note" className="copyright">© WHSU 2020</span>
  </div>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

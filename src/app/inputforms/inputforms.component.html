@@ -1,43 +1,50 @@
 
-    <div class="container">
-      <div class="row">
-            <div class="card-header">
-            <h3>Angular Group Info</h3>
-            </div>
-
-          <div class="card-body">
-
-            <form class="form" [formGroup]="inputForm" (ngSubmit) = "onSubmit()">
-              <div class="form-group">
-            <input formControlName="input1" class="form-control" type="text" id="input1"
-               name="input1" value={fieldState.input1.value} placeholder="attribute1"
-                 pattern="^[a-zA-Z0-9_]+$" minLength={4} maxLength={15} required={true}/>
-
-            <span class="text-danger" *ngIf="(inputFormControl.name.touched||submitted) && inputFormControl.name.errors.requiredError">
-                  Required is not statisfied
-            </span>
-            <span class="text-danger" *ngIf="(inputFormControl.name.touched||submitted) && inputFormControl.name.errors.patternError">
-                 Pattern is not statisfied
-            </span>
-            <span class="text-danger" *ngIf="(inputFormControl.name.touched||submitted) && inputFormControl.name.errors.minErrorError">
+    <div class="card-container">
+    
+            <div class="header">
+            <h3>Angular Group Info1</h3>
+           
+            <form [formGroup]="inputForm" (ngSubmit) = "onSubmit()">
+               <div class="align-item2">
+                     <input  formControlName="input1" type="text" id="input1" placeholder="attribute1"  required=true, maxLength=10>
+               </div>
+               <div>
+                 <span  *ngIf="(input1Field.valid ||   !input1Field.touched)">
+                  Please enter group attribute 1
+                  </span>
+                </div>
+           
+               <div class="error-display">
+              
+                 <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.required">
+                      Required is not statisfied
+                  </span>
+          
+                 <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidPattern">
+                    Pattern is not statisfied
+                 </span>
+                  <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidMinValue">
                       Min is not satisfied
+                  </span>
+               </div>
 
-            </span>
-             <span class="text-danger" *ngIf="(inputFormControl.name.touched||submitted) && inputFormControl.name.errors.maxErrorError">
-                  Max is not statisfied
-
-             </span>
-
-            <input formControlName="input2" class="form-control" type="text" id="input2" name="input2" value={fieldState.input1.value} placeholder="attribute2" minLength={4} maxLength={15}/>
-           <span class="text-danger" *ngIf="(inputFormControl.name.touched||submitted) && inputFormControl.name.errors.requiredError">
-
+              <div class="align-item2">
+                 <input formControlName="input2" id="input2" type="text" name="input2" placeholder="attribute2" maxLength=10/>
+              </div>
+            <div>
+            <span  *ngIf="(input2Field.valid ||   !input2Field.touched)">
+                  Please enter group attribute 2
+                  </span>
+                </div>
+           <span class="error-display" *ngIf="(input2Field.touched||submitted) && input2Field.errors?.invalidMinValue">
              Min is not statisfied
            </span>
-
-
-            <button color="primary" type="submit" class="button button-success" name="submit" [disabled]="inputForm.invalid">Submit</button>
-        </div>
+        
+          <div class="align-button">
+             <button  type="submit" class="center-display" name="submit" [disabled]="!inputForm.valid">Submit</button>
+          </div>
+       
         </form>
         </div>
-        </div>
+   </div>
 

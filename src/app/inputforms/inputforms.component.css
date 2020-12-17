@@ -1,0 +1,29 @@
+.error-display {
+  margin: 5px;
+  text-align: center;
+  text-justify: center;
+  line-height: 100%;
+  font-size: 80;
+  color: red;
+  justify-content: space-evenly;
+}
+
+.hint-center {
+  display: inline-block;
+  margin: 5px;
+  align-content: center;
+  text-align: center;
+  text-justify: center;
+  align-items: center;
+  line-height: 100%;
+  font-size: 80%;
+  color: purple;
+}
+
+.header1 {
+  font-weight: bold;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
