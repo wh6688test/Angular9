@@ -1,29 +1,29 @@
 
     <div class="card-container">
-    
+
             <div class="header">
-            <h3>Angular Group Info1</h3>
-           
+            <h3 testid='title1'>Angular Group Info1</h3>
+
             <form [formGroup]="inputForm" (ngSubmit) = "onSubmit()">
                <div class="align-item2">
                      <input  formControlName="input1" type="text" id="input1" placeholder="attribute1"  required=true, maxLength=10>
                </div>
                <div>
-                 <span  *ngIf="(input1Field.valid ||   !input1Field.touched)">
+                 <span  testid='hint1' *ngIf="(input1Field.valid ||   !input1Field.touched)">
                   Please enter group attribute 1
                   </span>
                 </div>
-           
+
                <div class="error-display">
-              
-                 <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.required">
+
+                 <span  testid = 'requireErr' *ngIf="(input1Field.touched||submitted) && input1Field.errors?.required">
                       Required is not statisfied
                   </span>
-          
-                 <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidPattern">
+
+                 <span testid = 'patternErr' *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidPattern">
                     Pattern is not statisfied
                  </span>
-                  <span  *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidMinValue">
+                  <span  testid = 'minErr' *ngIf="(input1Field.touched||submitted) && input1Field.errors?.invalidMinValue">
                       Min is not satisfied
                   </span>
                </div>
@@ -32,18 +32,18 @@
                  <input formControlName="input2" id="input2" type="text" name="input2" placeholder="attribute2" maxLength=10/>
               </div>
             <div>
-            <span  *ngIf="(input2Field.valid ||   !input2Field.touched)">
+            <span  testid = 'hint2' *ngIf="(input2Field.valid ||   !input2Field.touched)">
                   Please enter group attribute 2
                   </span>
                 </div>
-           <span class="error-display" *ngIf="(input2Field.touched||submitted) && input2Field.errors?.invalidMinValue">
+           <span testid = 'minErr' class="error-display" *ngIf="(input2Field.touched||submitted) && input2Field.errors?.invalidMinValue">
              Min is not statisfied
            </span>
-        
+
           <div class="align-button">
              <button  type="submit" class="center-display" name="submit" [disabled]="!inputForm.valid">Submit</button>
           </div>
-       
+
         </form>
         </div>
    </div>

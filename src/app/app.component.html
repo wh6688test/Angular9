@@ -56,37 +56,37 @@
     alt="Angular Logo"
     src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg=="
   />
-  <span>Welcome to Wendy first Angular</span>
+  <span testid="titletop">Welcome to Wendy first Angular</span>
 </div>
 
 
 
   <!-- Highlight Card -->
-  
+
    <div class="hight-card">
     <app-inputforms #inputForm></app-inputforms>
     </div>
 
-   
+
 
 
 
    <div class="error1Display">
-<span *ngIf="inputForm.groups.error">{{inputForm.groups.error}}</span>
+<span testid="error" *ngIf="inputForm.groups.error">{{inputForm.groups.error}}</span>
 
   </div>
   <div class="cardspread">
- <table  *ngIf="inputForm.groups.data">
+ <table aria-describedby="group data table"  *ngIf="inputForm.groups.data">
       <thead>
-         <tr>
-          <th>Group Id</th>
-          <th>Attribute1</th>
-          <th>Attribute2</th>
-           <th>Member Count</th>
+         <tr testid="groupHead">
+          <th id="gid">Group Id</th>
+          <th id="attr1">Attribute1</th>
+          <th id="attr2">Attribute2</th>
+           <th id="member">Member Count</th>
         </tr>
       </thead>
     <tbody>
-        <tr *ngFor="let group of inputForm.groups.data">
+        <tr  testid="groupData" *ngFor="let group of inputForm.groups.data">
           <td>{{group.group_id}}</td>
           <td>{{group.attr1}}</td>
            <td>{{group.attr2}}</td>

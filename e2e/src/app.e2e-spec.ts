@@ -1,19 +1,29 @@
-import { AppPage } from './app.po';
-import { browser, logging } from 'protractor';
+import { AppPage} from './pages/app.po';
+import {InputFormPage} from './pages/form.po';
+import { browser, logging, ExpectedConditions } from 'protractor';
+import * as utils from './common/utils';
 
-describe('workspace-project App', () => {
+describe('Group App Suite', () => {
   let page: AppPage;
 
-  beforeEach(() => {
+  beforeEach(async () => {
     page = new AppPage();
+    await utils.navigateTo();
   });
 
-  it('should display welcome message', () => {
-    page.navigateTo();
-    expect(page.getTitleText()).toEqual('myangularprotractor1 app is running!');
+
+  it('should display title and footers and image', async () => {
+    expect(await page.getTitleText()).toEqual('Welcome to Wendy first Angular');
+    expect(await page.getPrivacyLinkText()).toEqual('Privacy');
+    expect(await page.getTermsLinkText()).toEqual('Terms & Conditions');
+    expect(await page.getExternalLinkText()).toEqual('External');
+    expect(await page.getCRNoteText()).toContain('2020');
+    //verify image loading is completed
+    expect(await page.contentImg.getAttribute('complete')).toBeTruthy();
   });
 
-  afterEach(async () => {
+
+ afterEach(async () => {
     // Assert that there are no errors emitted from the browser
     const logs = await browser.manage().logs().get(logging.Type.BROWSER);
     expect(logs).not.toContain(jasmine.objectContaining({

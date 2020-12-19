@@ -1,0 +1,18 @@
+....
+: Compiled successfully.
+[21:42:26] I/launcher - Running 1 instances of WebDriver
+[21:42:26] I/direct - Using ChromeDriver directly...
+Jasmine started
+
+  Group App Suite
+    ✓ should display title and footers and image
+
+  Group Form Suite
+    ✓ should display form title hint button on page up
+    ✓ should submit form successfully
+    ✓ should display client validation errors
+
+Executed 4 of 4 specs SUCCESS in 3 secs.
+[21:42:32] I/launcher - 0 instance(s) of WebDriver still running
+[21:42:32] I/launcher - chrome #01 passed
+
