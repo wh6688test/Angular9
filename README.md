@@ -1,4 +1,7 @@
-#Prerequisite : set up angular9 environment : associated node dependencies
+#Prerequisite : 
+  1. set up angular9 environment : associated node dependencies
+  2. working with fastapi backend : https://github.com/wh6688test/fastapi
+
 
 CLI : 
 
